@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/profile.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <div id="algn">
+        <div id="card">
+            <div id="upper-bg">
+                <img src="https://images.unsplash.com/photo-1760479099350-657ce822eb10?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687"
+                    alt="profile-pic" class="profile-pic">
+            </div>
+            <div id="lower-bg">
+                <div class="text">
+                    <p class="name">
+                        <%=user.username%>
+                    </p>
+                    <p class="title">@<%=user.username%> <br> Lorem ipsum dolor, sit</p>
+                </div>
+                <div id="icons">
+                    <a href="#" class="ico"><img width="48" height="48"
+                            src="https://img.icons8.com/color/48/gmail-new.png" alt="gmail-new" /></a>
+                    <a href="#" class="ico">
+                        <img width="48" height="48" src="https://img.icons8.com/fluency/48/github.png" alt="github" />
+                    </a>
+                    <a href="#" class="ico">
+                        <img width="48" height="48" src="https://img.icons8.com/color/48/linkedin.png" alt="linkedin" />
+                    </a>
+                    <a href="#" class="ico">
+                        <img width="48" height="48" src="https://img.icons8.com/color/48/facebook-new.png"
+                            alt="facebook-new" />
+                    </a>
+                </div>
+                <div id="btn">
+                    <a href="/logout" class="msg">Logout</a>
+                    <form action="/upload" method="POST" enctype="multipart/form-data">
+                        <input type="text" name="filecaption" placeholder="some caption">
+                        <input type="file" name="file">
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+                <div id="l-c-s">
+                    <div class="num">
+                        <img width="48" height="48"
+                            src="https://img.icons8.com/fluency-systems-regular/48/facebook-like--v1.png"
+                            alt="facebook-like--v1" />
+                        <span>35k</span>
+                    </div>
+                    <div class="num dvr"></div>
+                    <div class="num">
+                        <img width="48" height="48"
+                            src="https://img.icons8.com/fluency-systems-regular/48/speech-bubble--v1.png"
+                            alt="speech-bubble--v1" />
+                        <span>20k</span>
+                    </div>
+                    <div class="num dvr"></div>
+                    <div class="num">
+                        <img width="48" height="48" src="https://img.icons8.com/pulsar-line/48/share.png" alt="share" />
+                        <span>15k</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cards">
+        <% user.posts.forEach(function(post){ %>
+            <div class="card" style="width: 18rem;">
+                <img src="/images/uploads/<%=post.image %>" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <%= post.imageTaxt %>
+                    </h5>
+                </div>
+            </div>
+            <% }) %>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
