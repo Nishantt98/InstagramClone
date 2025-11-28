@@ -8,8 +8,10 @@ const flash = require("connect-flash");
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-const passport = require('passport');
-
+const passport = require('passport');  // ya ek framework ya ek main authentication framework 
+                                        //mainly use middleware,session hangling,serialize/deserialize logic
+                                        //annd plugins
+                                         // password-local-mongoose - mongoose plugin
 
 
 var app = express();

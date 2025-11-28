@@ -7,7 +7,7 @@ const upload = require('./multer');
 
 
 //in do line se user login hota hai
-const localStrategy = require("passport-local");
+const localStrategy = require("passport-local"); //  // hangle username + password login 
 const post = require('./post');
 passport.use(new localStrategy(UserModel.authenticate()))
 
@@ -47,14 +47,8 @@ router.get('/profile',isLoggedIn,async function(req, res, next) {
 });
 
 router.post('/registor',function(req,res){
-  // let userData = new UserModel({
-  //       username:req.body.username,     //own code
-  //       email:req.body.email,
-  //       fullName:req.body.fullName,
-  // })
-
   const { username, email, fullName } = req.body;
-  let userData = new UserModel({ username, email, fullName });//short by chatgpt
+  const userData = new UserModel({ username, email, fullName });//short by chatgpt
 
   UserModel.register(userData,req.body.password)
   .then(function(){

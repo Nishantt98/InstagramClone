@@ -1,7 +1,7 @@
 
 const mongoose = require('mongoose');
 
-const plm = require("passport-local-mongoose")
+const plm = require("passport-local-mongoose")  // to create Login+Register authentication
 
 mongoose.connect("mongodb://127.0.0.1:27017/firstproject")
 
